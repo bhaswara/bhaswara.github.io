@@ -1,6 +1,6 @@
 ---
 layout: post
-title: An Introduction to Knowledge Distillation
+title: Knowledge Distillation
 date: 2021-12-27 08:00:00
 description: an introduction to knowledge distillation with additional Pytorch code
 comments: true
