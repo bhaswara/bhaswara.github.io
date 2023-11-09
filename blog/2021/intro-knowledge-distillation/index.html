@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+<title>
+
+  Irfan Dwiki Bhaswara
+
+
+  | Knowledge Distillation
+
+</title>
+<meta name="description" content="A Lifelong Learner
+">
+
+<!-- Open Graph -->
+
+
+<!-- Bootstrap & MDB -->
+<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/css/mdb.min.css" integrity="sha512-RO38pBRxYH3SoOprtPTD86JFOclM51/XTIdEPh5j8sj4tp8jmQIx26twG52UaLi//hQldfrh7e51WzP9wuP32Q==" crossorigin="anonymous" />
+
+<!-- Fonts & Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css"  integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.9.0/css/academicons.min.css" integrity="sha512-W4yqoT1+8NLkinBLBZko+dFB2ZbHsYLDdr50VElllRcNt2Q4/GSs6u71UHKxB7S6JEMCp5Ve4xjh3eGQl/HRvg==" crossorigin="anonymous">
+<link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:100,300,400,500,700|Material+Icons">
+
+<!-- Code Syntax Highlighting -->
+<link rel="stylesheet" href="https://gitcdn.link/repo/jwarby/jekyll-pygments-themes/master/github.css" />
+
+<!-- Styles -->
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22></text></svg>">
+
+<link rel="stylesheet" href="/assets/css/main.css">
+<link rel="canonical" href="https://bhaswara.github.io/blog/2021/intro-knowledge-distillation/">
+
+
+
+  </head>
+
+  <body class="fixed-top-nav ">
+
+    <!-- Header -->
+
+    <header>
+
+    <!-- Nav Bar -->
+    <nav id="navbar" class="navbar navbar-light navbar-expand-sm fixed-top">
+    <div class="container">
+      
+      <a class="navbar-brand title font-weight-lighter" href="https://bhaswara.github.io/">
+       <span class="font-weight-bold">Irfan</span> Dwiki  Bhaswara
+      </a>
+      
+      <!-- Navbar Toggle -->
+      <button class="navbar-toggler collapsed ml-auto" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar top-bar"></span>
+        <span class="icon-bar middle-bar"></span>
+        <span class="icon-bar bottom-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse text-right" id="navbarNav">
+        <ul class="navbar-nav ml-auto flex-nowrap">
+          <!-- About -->
+          <li class="nav-item ">
+            <a class="nav-link" href="/">
+              about
+              
+            </a>
+          </li>
+          
+          <!-- Blog -->
+          <li class="nav-item active">
+            <a class="nav-link" href="/blog/">
+              blog
+              
+            </a>
+          </li>
+          
+          <!-- Other pages -->
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          <li class="nav-item ">
+              <a class="nav-link" href="/publications/">
+                publications
+                
+              </a>
+          </li>
+          
+          
+          
+          
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+</header>
+
+
+    <!-- Content -->
+
+    <div class="container mt-5">
+      
+
+
+
+
+
+<div class="post">
+
+  <header class="post-header">
+    <h1 class="post-title">Knowledge Distillation</h1>
+    <p class="post-meta">December 27, 2021</p>
+    <p class="post-tags">
+      <a href="/blog/2021"> <i class="fas fa-calendar fa-sm"></i> 2021 </a>
+      
+
+      
+        ·  
+        
+        <a href="/blog/category/knowledge-distillation">
+          <i class="fas fa-tag fa-sm"></i> knowledge-distillation</a>  
+          
+        <a href="/blog/category/jsc-research">
+          <i class="fas fa-tag fa-sm"></i> jsc-research</a>  
+          
+      
+
+    </p>
+  </header>
+
+  <article class="post-content">
+    <div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        
+
+<figure>
+
+  <picture>
+    
+      <source media="(max-width: 480px)" srcset="/assets/img/teacher-student-480.webp"></source>
+    
+      <source media="(max-width: 800px)" srcset="/assets/img/teacher-student-800.webp"></source>
+    
+      <source media="(max-width: 1400px)" srcset="/assets/img/teacher-student-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/teacher-student.jpg" title="">
+
+  </picture>
+
+  
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Figure 1. A teacher and her students.
+</div>
+
+<p>Have you ever heard about knowledge distillation? If yes then you may skip this introduction and directly go on to the coding section. But if you haven’t, then let’s us dive in together to this topic. I know this topic when I was looking for optimization deep learning model for embedded devices. Well, it’s actually not a new topic in deep learning and many researchers already developed it. But it’s better late than nothing to know this topic, isn’t it? Ok let’s start this.</p>
+
+<p>What is knowledge distillation? hmm maybe I should start with a simple first. When you open this post, at the beginning you see an image about a teacher and her students in a classroom. The teacher teaches and tranfers her knowledge to the students and the students grasp the information from the teacher. It’s almost the same with knowledge distillation. In knowledge distillation, there are 2 models: a teacher and a student. A teacher basically is a big model where it has many parameters. Or in the knowledge distillation paper [<a href="https://arxiv.org/abs/1503.02531" target="_blank" rel="noopener noreferrer">1</a>], it’s called the cumbersome model. The teacher itself could be pretrained or not. Whereas a student is a non-pretrained small model with less parameters than the teacher model. To get the insight about this teacher and student, I put an image below.</p>
+
+<div class="row">
+    <div class="col-sm mt-3 mt-md-0">
+        
+
+<figure>
+
+  <picture>
+    
+      <source media="(max-width: 480px)" srcset="/assets/img/kd-480.webp"></source>
+    
+      <source media="(max-width: 800px)" srcset="/assets/img/kd-800.webp"></source>
+    
+      <source media="(max-width: 1400px)" srcset="/assets/img/kd-1400.webp"></source>
+    
+
+    <!-- Fallback to the original file -->
+    <img class="img-fluid rounded z-depth-1" src="/assets/img/kd.jpg" title="">
+
+  </picture>
+
+  
+
+</figure>
+
+    </div>
+</div>
+<div class="caption">
+    Figure 2. Knowledge distillation model.
+</div>
+
+<p>Actually we can have only a single model where it acts as teacher and student itself which it called as self-distillation. We will talk about this in another section. Ok back to the topic. Most of the model are not embedded devices friendly although they have high accuracy. They take a lot of storages and computations. Take an example of Resnet-50 [<a href="https://arxiv.org/abs/1512.03385" target="_blank" rel="noopener noreferrer">2</a>] where it has over 23 million trainable parameters and has a size about 90 MB. With the knowledge distillation method, we want to transfer the knowledge from the big model to the small model so it is suitable for embedded devices deployment. It’s hoped that the knowledge that is transferred from the teacher to the student will have similar in accuracy but less parameters and size.</p>
+
+<p>So, how does it work? the teacher predicts the probability distribution and transfers its knowledge to the student while at the same time also minimizing its loss function. Those probabilities are calculated using softmax function as in \eqref{eq:softmax-function}</p>
+
+<p>\begin{equation}
+\label{eq:softmax-function}
+q_{i} = \frac{exp(z_{i}/T)}{\sum_{j}exp(z_{j}/T)}
+\end{equation}</p>
+
+<p>The student also returns some probability distribution. We want this distribution as close as the distributions from the teacher output. So, we apply Kullback-Leibler (KL) divergence between student and teacher as distillation loss. At the same time, we also want the student correctly predicts the classes. Here, we use categorical cross-entropy as student loss. Combining both, we get knowledge distillation loss function \eqref{eq:kd-loss}</p>
+
+<p>\begin{equation}
+\label{eq:kd-loss}
+L_{KD} = \alpha * L_{Student} + (1 - \alpha) * L_{Teacher}
+\end{equation}</p>
+
+<p>Ok, until now I only talk about the theory behind it. So, let’s continue to the coding step!</p>
+
+<h2 id="code">Code</h2>
+<p>In this example code, I only use mnist dataset and fully-connected model.</p>
+
+<p>Ok, first, let’s import the library.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="kn">import</span> <span class="n">numpy</span> <span class="k">as</span> <span class="n">np</span>
+<span class="kn">import</span> <span class="n">random</span>
+
+<span class="kn">import</span> <span class="n">torch</span>
+<span class="kn">import</span> <span class="n">torch.nn</span> <span class="k">as</span> <span class="n">nn</span>
+<span class="kn">import</span> <span class="n">torchvision.datasets</span> <span class="k">as</span> <span class="n">datasets</span>
+<span class="kn">import</span> <span class="n">torchvision.transforms</span> <span class="k">as</span> <span class="n">transforms</span>
+<span class="kn">import</span> <span class="n">torch.optim</span> <span class="k">as</span> <span class="n">optim</span>
+<span class="kn">import</span> <span class="n">torch.nn.functional</span> <span class="k">as</span> <span class="n">F</span>
+<span class="kn">from</span> <span class="n">torch.utils.data</span> <span class="kn">import</span> <span class="n">DataLoader</span><span class="p">,</span> <span class="n">random_split</span></code></pre></figure>
+
+<p>Next, we load, split, and convert our mnist data into pytorch tensor.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="n">transform</span> <span class="o">=</span> <span class="n">transforms</span><span class="p">.</span><span class="nc">Compose</span><span class="p">([</span><span class="n">transforms</span><span class="p">.</span><span class="nc">ToTensor</span><span class="p">()])</span>
+
+<span class="n">trainset</span> <span class="o">=</span> <span class="n">datasets</span><span class="p">.</span><span class="nc">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="sh">'</span><span class="s">files_mnist/</span><span class="sh">'</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
+<span class="n">train</span><span class="p">,</span> <span class="n">valid</span> <span class="o">=</span> <span class="nf">random_split</span><span class="p">(</span><span class="n">trainset</span><span class="p">,[</span><span class="mi">50000</span><span class="p">,</span><span class="mi">10000</span><span class="p">])</span>
+
+<span class="n">testset</span> <span class="o">=</span> <span class="n">datasets</span><span class="p">.</span><span class="nc">MNIST</span><span class="p">(</span><span class="n">root</span><span class="o">=</span><span class="sh">'</span><span class="s">files_mnist/</span><span class="sh">'</span><span class="p">,</span> <span class="n">download</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">train</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">transform</span><span class="o">=</span><span class="n">transform</span><span class="p">)</span>
+
+<span class="n">trainloader</span> <span class="o">=</span> <span class="nc">DataLoader</span><span class="p">(</span><span class="n">train</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">worker_init_fn</span><span class="o">=</span><span class="n">seed_worker</span><span class="p">,</span> <span class="n">generator</span><span class="o">=</span><span class="n">g</span><span class="p">)</span>
+<span class="n">valloader</span> <span class="o">=</span> <span class="nc">DataLoader</span><span class="p">(</span><span class="n">valid</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">worker_init_fn</span><span class="o">=</span><span class="n">seed_worker</span><span class="p">,</span> <span class="n">generator</span><span class="o">=</span><span class="n">g</span><span class="p">)</span>
+<span class="n">testloader</span> <span class="o">=</span> <span class="nc">DataLoader</span><span class="p">(</span><span class="n">testset</span><span class="p">,</span> <span class="n">batch_size</span><span class="o">=</span><span class="mi">32</span><span class="p">,</span> <span class="n">shuffle</span><span class="o">=</span><span class="bp">False</span><span class="p">,</span> <span class="n">worker_init_fn</span><span class="o">=</span><span class="n">seed_worker</span><span class="p">,</span> <span class="n">generator</span><span class="o">=</span><span class="n">g</span><span class="p">)</span></code></pre></figure>
+
+<p>It’s time to create teacher and student model. The teacher model only uses 2 hidden layers. You can try another option such as adding another layers or changing the input and output of each layers. The point is that the teacher model should be bigger than the student model.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Teacher model
+</span><span class="k">class</span> <span class="nc">teacher_net</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nf">super</span><span class="p">(</span><span class="n">teacher_net</span><span class="p">,</span> <span class="n">self</span><span class="p">).</span><span class="nf">__init__</span><span class="p">()</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">fc1</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="mi">784</span><span class="p">,</span> <span class="mi">512</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">fc2</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="mi">512</span><span class="p">,</span> <span class="mi">256</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">fc3</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="mi">256</span><span class="p">,</span> <span class="mi">128</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">fc4</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="nf">view</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="nf">relu</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="nf">fc1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="nf">relu</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="nf">fc2</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="nf">relu</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="nf">fc3</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">fc4</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x</span>
+
+<span class="c1"># Student model
+</span><span class="k">class</span> <span class="nc">student_net</span><span class="p">(</span><span class="n">nn</span><span class="p">.</span><span class="n">Module</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">__init__</span><span class="p">(</span><span class="n">self</span><span class="p">):</span>
+        <span class="nf">super</span><span class="p">(</span><span class="n">student_net</span><span class="p">,</span> <span class="n">self</span><span class="p">).</span><span class="nf">__init__</span><span class="p">()</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">fc1</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="mi">784</span><span class="p">,</span> <span class="mi">50</span><span class="p">)</span>
+        <span class="n">self</span><span class="p">.</span><span class="n">fc2</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">Linear</span><span class="p">(</span><span class="mi">50</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">forward</span><span class="p">(</span><span class="n">self</span><span class="p">,</span> <span class="n">x</span><span class="p">):</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">x</span><span class="p">.</span><span class="nf">view</span><span class="p">(</span><span class="n">x</span><span class="p">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="nf">relu</span><span class="p">(</span><span class="n">self</span><span class="p">.</span><span class="nf">fc1</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">x</span> <span class="o">=</span> <span class="n">self</span><span class="p">.</span><span class="nf">fc2</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">x</span></code></pre></figure>
+
+<p>Next we define our loss function as in equation \eqref{eq:kd-loss}.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Knowledge distillation loss
+</span><span class="k">def</span> <span class="nf">loss_kd</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+    <span class="n">p_s</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="nf">log_softmax</span><span class="p">(</span><span class="n">scores</span><span class="o">/</span><span class="n">T</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">p_t</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="nf">softmax</span><span class="p">(</span><span class="n">targets</span><span class="o">/</span><span class="n">T</span><span class="p">,</span> <span class="n">dim</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+    <span class="n">distill_loss</span> <span class="o">=</span> <span class="n">nn</span><span class="p">.</span><span class="nc">KLDivLoss</span><span class="p">()(</span><span class="n">p_s</span><span class="p">,</span> <span class="n">p_t</span><span class="p">)</span> <span class="o">*</span> <span class="p">(</span><span class="n">T</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> 
+    <span class="n">student_loss</span> <span class="o">=</span> <span class="n">F</span><span class="p">.</span><span class="nf">cross_entropy</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">labels</span><span class="p">)</span>
+    
+    <span class="n">loss</span> <span class="o">=</span> <span class="n">alpha</span> <span class="o">*</span> <span class="n">student_loss</span> <span class="o">+</span> <span class="p">(</span><span class="mf">1.</span> <span class="o">-</span> <span class="n">alpha</span><span class="p">)</span> <span class="o">*</span> <span class="n">distill_loss</span>
+    
+    <span class="k">return</span> <span class="n">loss</span></code></pre></figure>
+
+<p>Last, we train our student model using \(\alpha\)=0.5, temperature=2, and epoch=10. You can play with other numbers.</p>
+
+<figure class="highlight"><pre><code class="language-python" data-lang="python"><span class="c1"># Training student with distillation loss
+</span><span class="n">epochs</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="n">temperature</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">alpha</span><span class="o">=</span><span class="mf">0.5</span>
+
+<span class="k">for</span> <span class="n">epoch</span> <span class="ow">in</span> <span class="nf">range</span><span class="p">(</span><span class="n">epochs</span><span class="p">):</span>
+    <span class="n">train_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">train_acc</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">train_total</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="n">valid_loss</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">valid_acc</span> <span class="o">=</span> <span class="mf">0.0</span>
+    <span class="n">val_total</span> <span class="o">=</span> <span class="mi">0</span>
+    
+    <span class="n">student_model</span><span class="p">.</span><span class="nf">train</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">data</span><span class="p">,</span> <span class="n">labels</span> <span class="ow">in</span> <span class="n">trainloader</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="n">labels</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        
+        <span class="n">optimizer</span><span class="p">.</span><span class="nf">zero_grad</span><span class="p">()</span>
+        
+        <span class="n">scores</span> <span class="o">=</span> <span class="nf">student_model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">targets</span> <span class="o">=</span> <span class="nf">teacher_model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        
+        <span class="n">_</span><span class="p">,</span> <span class="n">preds</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        
+        <span class="n">loss</span> <span class="o">=</span> <span class="nf">loss_kd</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">temperature</span><span class="p">)</span>
+        
+        <span class="n">loss</span><span class="p">.</span><span class="nf">backward</span><span class="p">()</span>
+        
+        <span class="n">optimizer</span><span class="p">.</span><span class="nf">step</span><span class="p">()</span>
+        
+        <span class="n">train_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="p">.</span><span class="nf">item</span><span class="p">()</span>
+        <span class="n">train_acc</span> <span class="o">+=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">sum</span><span class="p">(</span><span class="n">preds</span> <span class="o">==</span> <span class="n">labels</span><span class="p">)</span>
+        <span class="n">train_total</span> <span class="o">+=</span> <span class="n">labels</span><span class="p">.</span><span class="nf">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+        
+    <span class="n">student_model</span><span class="p">.</span><span class="nf">eval</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">data</span><span class="p">,</span> <span class="n">labels</span> <span class="ow">in</span> <span class="n">valloader</span><span class="p">:</span>
+        <span class="n">data</span> <span class="o">=</span> <span class="n">data</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        <span class="n">labels</span> <span class="o">=</span> <span class="n">labels</span><span class="p">.</span><span class="nf">to</span><span class="p">(</span><span class="n">device</span><span class="p">)</span>
+        
+        <span class="n">scores</span> <span class="o">=</span> <span class="nf">student_model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        <span class="n">targets</span> <span class="o">=</span> <span class="nf">teacher_model</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+        
+        <span class="n">_</span><span class="p">,</span> <span class="n">preds</span> <span class="o">=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">max</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+        
+        <span class="n">loss</span> <span class="o">=</span> <span class="nf">loss_kd</span><span class="p">(</span><span class="n">scores</span><span class="p">,</span> <span class="n">labels</span><span class="p">,</span> <span class="n">targets</span><span class="p">,</span> <span class="n">alpha</span><span class="o">=</span><span class="n">alpha</span><span class="p">,</span> <span class="n">T</span><span class="o">=</span><span class="n">temperature</span><span class="p">)</span>
+        
+        <span class="n">valid_loss</span> <span class="o">+=</span> <span class="n">loss</span><span class="p">.</span><span class="nf">item</span><span class="p">()</span>
+        <span class="n">valid_acc</span> <span class="o">+=</span> <span class="n">torch</span><span class="p">.</span><span class="nf">sum</span><span class="p">(</span><span class="n">preds</span> <span class="o">==</span> <span class="n">labels</span><span class="p">)</span>
+        <span class="n">val_total</span> <span class="o">+=</span> <span class="n">labels</span><span class="p">.</span><span class="nf">size</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span>
+    
+    <span class="n">training_loss</span> <span class="o">=</span> <span class="n">train_loss</span> <span class="o">/</span> <span class="nf">len</span><span class="p">(</span><span class="n">trainloader</span><span class="p">)</span>
+    <span class="n">training_acc</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">train_acc</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">train_total</span><span class="p">)</span>
+    <span class="n">validation_loss</span> <span class="o">=</span> <span class="n">valid_loss</span> <span class="o">/</span> <span class="nf">len</span><span class="p">(</span><span class="n">valloader</span><span class="p">)</span>
+    <span class="n">validation_acc</span> <span class="o">=</span> <span class="p">(</span><span class="mi">100</span> <span class="o">*</span> <span class="n">valid_acc</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="n">val_total</span><span class="p">)</span>
+    
+    <span class="nf">print</span><span class="p">(</span><span class="sh">"</span><span class="s">Epoch: {}/{} </span><span class="se">\n</span><span class="s">Training Loss:{:.4f} Training Acc:{:.1f} </span><span class="se">\n</span><span class="s">Validation Loss:{:.4f} Validation Acc:{:.1f}</span><span class="se">\n</span><span class="sh">"</span><span class="p">.</span><span class="nf">format</span><span class="p">(</span>
+    <span class="n">epoch</span><span class="p">,</span> <span class="n">epochs</span><span class="p">,</span> <span class="n">training_loss</span><span class="p">,</span> <span class="n">training_acc</span><span class="p">,</span> <span class="n">validation_loss</span><span class="p">,</span> <span class="n">validation_acc</span><span class="p">))</span></code></pre></figure>
+
+<p>Ok, that’s all for the introduction of knowledge distillation. Thank you for your time. I hope you like it. Stay tuned for other posts related to computer vision and deep learning!.</p>
+
+<p>P.S: If you want to see the result, just open <a href="https://github.com/bhaswara/knowledge-distillation" target="_blank" rel="noopener noreferrer">my github page</a>. I put all there.</p>
+
+<h2 id="references">References</h2>
+<p>[1] Hinton, G., Vinyals, O., and Dean, J., “Distilling the Knowledge in a Neural Network”, <i>arXiv e-prints</i>, 2015.</p>
+
+<p>[2] He, K., Zhang, X., Ren, S., and Sun, J., “Deep Residual Learning for Image Recognition”, <i>arXiv e-prints</i>, 2015.</p>
+
+  </article>
+
+  
+    <div id="disqus_thread"></div>
+    <script type="text/javascript">
+      var disqus_shortname  = 'bhaswara';
+      var disqus_identifier = '/blog/2021/intro-knowledge-distillation';
+      var disqus_title      = "Knowledge Distillation";
+      (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+      })();
+    </script>
+    <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript" target="_blank" rel="noopener noreferrer">comments powered by Disqus.</a>
+</noscript>
+  
+
+</div>
+
+    </div>
+
+    <!-- Footer -->
+
+    
+<footer class="fixed-bottom">
+  <div class="container mt-0">
+    © Copyright 2023 Irfan Dwiki Bhaswara.
+    Powered by <a href="http://jekyllrb.com/" target="_blank" rel="noopener noreferrer">Jekyll</a> with <a href="https://github.com/alshedivat/al-folio" target="_blank" rel="noopener noreferrer">al-folio</a> theme.
+
+    
+    
+    Last updated: November 09, 2023.
+    
+  </div>
+</footer>
+
+
+
+  </body>
+
+  <!-- jQuery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+
+  <!-- Bootsrap & MDB scripts -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.4.4/umd/popper.min.js" integrity="sha512-eUQ9hGdLjBjY3F41CScH3UX+4JDSI9zXeroz7hJ+RteoCaY+GP/LDoM8AO+Pt+DRFw3nXqsjh9Zsts8hnYv8/A==" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha512-M5KW3ztuIICmVIhjSqXe01oV2bpe248gOxqmlcYrEzAvws7Pw3z6BK0iGbrwvdrUQUhi3eXgtxp5I8PDo9YfjQ==" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js" integrity="sha512-Mug9KHKmroQFMLm93zGrjhibM2z2Obg9l6qFG2qKjXEXkMp/VDkI4uju9m4QKPjWSwQ6O2qzZEnJDEeCw0Blcw==" crossorigin="anonymous"></script>
+
+  
+<!-- Mansory & imagesLoaded -->
+<script defer src="https://unpkg.com/masonry-layout@4/dist/masonry.pkgd.min.js"></script>
+<script defer src="https://unpkg.com/imagesloaded@4/imagesloaded.pkgd.min.js"></script>
+<script defer src="/assets/js/mansory.js" type="text/javascript"></script>
+
+
+  
+
+
+<!-- Medium Zoom JS -->
+<script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.0.6/dist/medium-zoom.min.js" integrity="sha256-EdPgYcPk/IIrw7FYeuJQexva49pVRZNmt3LculEr7zM=" crossorigin="anonymous"></script>
+<script src="/assets/js/zoom.js"></script>
+
+
+<!-- Load Common JS -->
+<script src="/assets/js/common.js"></script>
+
+  
+<!-- MathJax -->
+<script type="text/javascript">
+  window.MathJax = {
+    tex: {
+      tags: 'ams'
+    }
+  };
+</script>
+<script defer type="text/javascript" id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3.2.0/es5/tex-mml-chtml.js"></script>
+<script defer src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+
+  
+
+
+
+
+
+</html>
